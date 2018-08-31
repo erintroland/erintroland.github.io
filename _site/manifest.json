@@ -1,0 +1,15 @@
+{
+  "lang": "en-GB",
+  "name": "Erin Troland",
+  "short_name": "ErinTroland",
+  "theme_color": "#24292e",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "src": "",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone"
+}
