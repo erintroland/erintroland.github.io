@@ -1,5 +1,5 @@
 ---
-title:
+title: Erin Troland
 feature_text:
 feature_image: "IMG_0287_1.jpg"
 excerpt: ""
