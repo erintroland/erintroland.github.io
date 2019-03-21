@@ -6,12 +6,14 @@ excerpt: ""
 ---
 
 
-Economist, US Department of Treasury
+Economist, Federal Reserve Board of Governors
 
-&#101;&#114;&#105;&#110;&#46;&#116;&#114;&#111;&#108;&#97;&#110;&#100;&#50;&#64;&#116;&#114;&#101;&#97;&#115;&#117;&#114;&#121;&#46;&#103;&#111;&#118;
+[@e_troland](https://twitter.com/e_troland)
 
+
+&#101;&#114;&#105;&#110;&#046;&#101;&#046;&#116;&#114;&#111;&#108;&#097;&#110;&#100;&#064;&#102;&#114;&#098;&#046;&#103;&#111;&#118;
 
 <small>Photo: Ships hauling black sand. Ilocos, Philippines. November 2014. </small>
 
 
-<small><i>Opinions, findings, conclusions and recommendations expressed here are those of the author and do not necessarily reflect U.S. Department of Treasury or U.S. Government views.</i></small>
+<small><i>Opinions, findings, conclusions and recommendations expressed here are those of the author and do not necessarily reflect the Federal Reserve Board of Governors or the Federal Reserve System.</i></small>
