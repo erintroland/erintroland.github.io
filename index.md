@@ -6,7 +6,7 @@ excerpt: ""
 ---
 
 
-Economist, Federal Reserve Board of Governors;
+Economist, Federal Reserve Board of Governors
 
 [@e_troland](https://twitter.com/e_troland)
 
