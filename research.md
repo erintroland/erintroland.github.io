@@ -8,8 +8,14 @@ feature_image: "/assets/IMG_0749_1.jpg"
 <!--<!---aside: true-->
 
 ##### Publications and Working Papers
+Does Getting Health Insurance Affect Women’s Fertility? Evidence From the United Mine Workers’ Health Insurance
+<br><i>with Theodore Figinski</i>
+<br>American Economic Association Papers and Proceedings 2019 (forthcoming)
+
+
 [Modest, Secure and Informed: Successful Development in Conflict Zones](https://www.aeaweb.org/articles?id=10.1257/aer.103.3.512)
 <br><i>with Eli Berman, Joseph Felter, and Jacob Shapiro</i>
+<br>American Economic Association Papers and Proceedings 2013
 
 [Health Insurance, Hospitals, or Both? Evidence From the United Mine Workers' Health Care Programs](https://ssrn.com/abstract=3229442)
 <br><i>with Theodore Figinski</i> 
@@ -46,7 +52,7 @@ School Finance and Property Assessor Elections: Evidence from Expanded State-Lev
 
 <small>Photo: Exposed coal along roadway. Eastern Kentucky, April 2018. </small>
 
-<small><i>Opinions, findings, conclusions and recommendations expressed here are those of the author and do not necessarily reflect U.S. Department of Treasury or U.S. Government views.</i></small>
+<small><i>Opinions, findings, conclusions and recommendations expressed here are those of the author and do not necessarily reflect the Federal Reserve Board of Governors or the Federal Reserve System.</i></small>
 
 <!---
 <small>A small element</small>

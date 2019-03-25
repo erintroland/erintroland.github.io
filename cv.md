@@ -9,4 +9,4 @@ feature_image: "/assets/20160721_173508_1.jpg"
 <small>Photo: Sign for Barangay Dibayabay. Aurora, Philippines. July 2016. Credit: Naniette Coleman.</small>
 
 
-<small><i>Opinions, findings, conclusions and recommendations expressed here are those of the author and do not necessarily reflect U.S. Department of Treasury or U.S. Government views.</i></small>
+<small><i>Opinions, findings, conclusions and recommendations expressed here are those of the author and do not necessarily reflect the Federal Reserve Board of Governors or the Federal Reserve System.</i></small>
