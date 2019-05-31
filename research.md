@@ -8,9 +8,9 @@ feature_image: "/assets/IMG_0749_1.jpg"
 <!--<!---aside: true-->
 
 ##### Publications and Working Papers
-Does Getting Health Insurance Affect Women’s Fertility? Evidence From the United Mine Workers’ Health Insurance
+[Does Getting Health Insurance Affect Women’s Fertility? Evidence From the United Mine Workers’ Health Insurance](https://www.aeaweb.org/articles?id=10.1257/pandp.20191094)
 <br><i>with Theodore Figinski</i>
-<br>American Economic Association Papers and Proceedings 2019 (forthcoming)
+<br>American Economic Association Papers and Proceedings 2019
 
 
 [Modest, Secure and Informed: Successful Development in Conflict Zones](https://www.aeaweb.org/articles?id=10.1257/aer.103.3.512)
@@ -19,7 +19,7 @@ Does Getting Health Insurance Affect Women’s Fertility? Evidence From the Unit
 
 [Health Insurance, Hospitals, or Both? Evidence From the United Mine Workers' Health Care Programs](https://ssrn.com/abstract=3229442)
 <br><i>with Theodore Figinski</i> 
-<br> (Under Review)
+<br>
 
 [Can Fiscal Transfers Increase Local Revenue Collection? Evidence From The Philippines](http://ssrn.com/abstract=3242240)
 
@@ -33,12 +33,17 @@ How Does First-Time Mobile Phone Access Affect Remote Communities in the Philipp
 <br><i>with Joshua Blumenstock, Niall Keleher, and Arman Rezaee</i>
 <br>Funding from the Development Impact Lab and the Gates Foundation
 
-Long Run Impacts of Early Childhood Health Insurance on Earnings: Evidence from the United Mine Workers Health Programs in Appalachia
-<i><br>with Theodore Figinski</i>
+School Finance and Property Assessor Elections: Evidence from Expanded State-Level Oversight
+<br><i>with Alex Combs and John Foster</i>
 
 Economic Vulnerability in Rural America: Consumer Credit and the Coal Boom-Bust in the
 2000s
 <br><i>with Brigitte Roth Tran</i>
+
+
+Long Run Impacts of Early Childhood Health Insurance on Earnings: Evidence from the United Mine Workers Health Programs in Appalachia
+<i><br>with Theodore Figinski</i>
+
 
 Local Government Audits, Enforcement, and Corruption in the Philippines
 <br><i>with Cesi Cruz</i>
@@ -47,8 +52,7 @@ More Hospitals, Better Health? The Impact of the Hill-Burton Program on Hospital
 Health Outcomes
 <br><i>with Theodore Figinski<i>
 
-School Finance and Property Assessor Elections: Evidence from Expanded State-Level Oversight
-<br><i>with Alex Combs, John Foster, and Eugenia F. Toma</i>
+
 
 <small>Photo: Exposed coal along roadway. Eastern Kentucky, April 2018. </small>
 
