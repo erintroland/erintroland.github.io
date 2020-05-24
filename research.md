@@ -17,7 +17,7 @@ feature_image: "/assets/IMG_0749_1.jpg"
 <br><i>with Eli Berman, Joseph Felter, and Jacob Shapiro</i>
 <br>American Economic Association Papers and Proceedings 2013
 
-[Health Insurance, Hospitals, or Both? Evidence From the United Mine Workers' Health Care Programs](https://ssrn.com/abstract=3229442)
+[Health Insurance and Hospital Supply:  Evidence from 1950s Coal Country](https://www.federalreserve.gov/econres/feds/files/2020033pap.pdf)
 <br><i>with Theodore Figinski</i> 
 <br>
 
@@ -43,15 +43,6 @@ Economic Vulnerability in Rural America: Consumer Credit and the Coal Boom-Bust 
 
 Long Run Impacts of Early Childhood Health Insurance on Earnings: Evidence from the United Mine Workers Health Programs in Appalachia
 <i><br>with Theodore Figinski</i>
-
-
-Local Government Audits, Enforcement, and Corruption in the Philippines
-<br><i>with Cesi Cruz</i>
-
-More Hospitals, Better Health? The Impact of the Hill-Burton Program on Hospital Births and
-Health Outcomes
-<br><i>with Theodore Figinski<i>
-
 
 
 <small>Photo: Exposed coal along roadway. Eastern Kentucky, April 2018. </small>

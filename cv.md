@@ -4,7 +4,7 @@ feature_image: "/assets/20160721_173508_1.jpg"
 ---
 
 
-[CV](/assets/ETroland_CV_JUNE2019_ac.pdf)
+[CV](/assets/ETroland_CV_JUN2020_website.pdf)
 
 <small>Photo: Sign for Barangay Dibayabay. Aurora, Philippines. July 2016. Credit: Naniette Coleman.</small>
 
