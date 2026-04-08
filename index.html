@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Erin Troland | Economist</title>
+
+  <style>
+    /*
+      SELF-HOSTED FONTS
+      ─────────────────
+      Download these font files and place them in a "fonts/" folder
+      in your GitHub repo alongside index.html.
+
+      Cormorant Garamond — download from:
+        https://fonts.google.com/specimen/Cormorant+Garamond
+        (click "Download family" — you need the .ttf files listed below)
+
+      DM Sans — download from:
+        https://fonts.google.com/specimen/DM+Sans
+        (click "Download family" — you need the .ttf files listed below)
+
+      Your fonts/ folder should contain:
+        fonts/CormorantGaramond-Light.ttf
+        fonts/CormorantGaramond-Regular.ttf
+        fonts/CormorantGaramond-Medium.ttf
+        fonts/CormorantGaramond-LightItalic.ttf
+        fonts/CormorantGaramond-Italic.ttf
+        fonts/DMSans-Light.ttf
+        fonts/DMSans-Regular.ttf
+        fonts/DMSans-Medium.ttf
+    */
+
+.back-to-top {
+  display: inline-block;
+  margin-top: 1.5rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-light);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.disclaimer {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: var(--ink-light);
+  font-style: italic;
+}
+
+.back-to-top:hover { color: var(--accent); }
+
+    .email-protect {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      src: url('fonts/CormorantGaramond-Light.ttf') format('truetype');
+      font-weight: 300; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      src: url('fonts/CormorantGaramond-Regular.ttf') format('truetype');
+      font-weight: 400; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      src: url('fonts/CormorantGaramond-Medium.ttf') format('truetype');
+      font-weight: 500; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      src: url('fonts/CormorantGaramond-LightItalic.ttf') format('truetype');
+      font-weight: 300; font-style: italic; font-display: swap;
+    }
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      src: url('fonts/CormorantGaramond-Italic.ttf') format('truetype');
+      font-weight: 400; font-style: italic; font-display: swap;
+    }
+    @font-face {
+      font-family: 'DM Sans';
+      src: url('fonts/DMSans-Light.ttf') format('truetype');
+      font-weight: 300; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: 'DM Sans';
+      src: url('fonts/DMSans-Regular.ttf') format('truetype');
+      font-weight: 400; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: 'DM Sans';
+      src: url('fonts/DMSans-Medium.ttf') format('truetype');
+      font-weight: 500; font-style: normal; font-display: swap;
+    }
+
+  
+    :root {
+      --bg:        #f2f1ee;
+      --surface:   #faf9f7;
+      --ink:       #2e3038;
+      --ink-light: #7a7d8a;
+      --rule:      #d8d7d2;
+      --accent:    #4a6585;   /* warm slate blue */
+      --max:       760px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg:        #1c1e22;
+        --surface:   #23262c;
+        --ink:       #e2e0db;
+        --ink-light: #8e9199;
+        --rule:      #353840;
+        --accent:    #7ea8cc;   /* lighter blue for dark backgrounds */
+      }
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    /* ── Layout ── */
+    .site-wrapper {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: var(--bg);
+      border-bottom: 1px solid var(--rule);
+      padding: 0.9rem 0;
+    }
+
+    nav .inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .nav-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    /* ── Hero ── */
+    header {
+      padding: 5rem 0 4rem;
+      display: flex;
+      gap: 3rem;
+      align-items: flex-start;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.1s ease forwards;
+    }
+
+    .headshot-wrap {
+      flex-shrink: 0;
+    }
+
+    /* ── HEADSHOT ── */
+    /* Replace the grey box with your actual photo:
+       Option A – src attribute: <img src="your-photo.jpg" …>
+       Option B – background-image on .headshot-placeholder */
+    .headshot-placeholder {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: var(--rule);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .headshot-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .headshot-placeholder svg {
+      opacity: 0.35;
+    }
+
+    .hero-text h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.6rem;
+      font-weight: 300;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-text .title {
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-text .bio {
+      font-size: 0.97rem;
+      color: var(--ink-light);
+      max-width: 500px;
+    }
+
+    .hero-text .contact-line {
+      margin-top: 1.2rem;
+      font-size: 0.82rem;
+      color: var(--ink-light);
+    }
+
+    .hero-text .contact-line a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .hero-text .contact-line a:hover { text-decoration: underline; }
+
+    /* ── Divider ── */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 0;
+    }
+
+    /* ── Sections ── */
+    section {
+      padding: 3.5rem 0;
+      border-bottom: 1px solid var(--rule);
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards;
+    }
+
+    section:nth-of-type(1) { animation-delay: 0.25s; }
+    section:nth-of-type(2) { animation-delay: 0.4s; }
+    section:nth-of-type(3) { animation-delay: 0.55s; }
+
+    section:last-of-type { border-bottom: none; }
+
+    .section-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+    }
+
+    /* ── Paper entries ── */
+    .papers { display: flex; flex-direction: column; gap: 2rem; }
+
+    .paper {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.3rem;
+    }
+
+    .paper-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--ink);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .paper-title:hover { color: var(--accent); }
+
+    a.paper-title-link {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--ink);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    a.paper-title-link:hover { color: var(--accent); }
+
+    .paper-meta {
+      font-size: 0.82rem;
+      color: var(--ink-light);
+    }
+
+    .paper-abstract {
+      font-size: 0.9rem;
+      color: var(--ink-light);
+      margin-top: 0.4rem;
+      line-height: 1.6;
+    }
+
+    .paper-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .pill {
+      display: inline-block;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border: 1px solid var(--rule);
+      padding: 0.2rem 0.7rem;
+      border-radius: 99px;
+      color: var(--ink-light);
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .pill:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* ── Figure toggle ── */
+    .figure-toggle, .abstract-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border: 1px solid var(--rule);
+      padding: 0.2rem 0.7rem;
+      border-radius: 99px;
+      color: var(--ink-light);
+      background: none;
+      cursor: pointer;
+      transition: border-color 0.2s, color 0.2s;
+      font-family: inherit;
+    }
+
+    .figure-toggle:hover, .abstract-toggle:hover { border-color: var(--accent); color: var(--accent); }
+
+    .figure-toggle .arrow, .abstract-toggle .arrow {
+      display: inline-block;
+      transition: transform 0.25s ease;
+      font-style: normal;
+      line-height: 1;
+    }
+
+    .figure-toggle.open .arrow { transform: rotate(180deg); }
+    .abstract-toggle.open .arrow { transform: rotate(180deg); }
+
+    /* ── Abstract panel ── */
+    .paper-abstract-panel {
+      display: none;
+      margin-top: 0.75rem;
+      font-size: 0.9rem;
+      color: var(--ink-light);
+      line-height: 1.6;
+      border-left: 2px solid var(--rule);
+      padding-left: 0.9rem;
+    }
+
+    .paper-abstract-panel.visible { display: block; }
+
+    .paper-figure {
+      display: none;
+      margin-top: 1rem;
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      overflow: hidden;
+      background: var(--surface);
+    }
+
+    .paper-figure.visible { display: block; }
+
+    .paper-figure img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .paper-figure figcaption {
+      padding: 0.6rem 0.9rem;
+      font-size: 0.8rem;
+      color: var(--ink-light);
+      border-top: 1px solid var(--rule);
+      font-style: italic;
+    }
+
+    /* ── Footer ── */
+    footer {
+      padding: 2.5rem 0;
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--ink-light);
+    }
+
+    /* ── Animation ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── Hamburger button ── */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--ink);
+      transition: transform 0.25s ease, opacity 0.2s ease;
+      transform-origin: center;
+    }
+
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      .nav-hamburger { display: flex; }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--bg);
+        border-bottom: 1px solid var(--rule);
+        padding: 0.5rem 0;
+      }
+
+
+      
+      .nav-links.open { display: flex; }
+
+      .nav-links li a {
+        display: block;
+        padding: 0.75rem 2rem;
+        font-size: 0.85rem;
+      }
+
+      header { flex-direction: column; gap: 1.5rem; padding: 3rem 0 2.5rem; }
+      .headshot-placeholder { width: 110px; height: 110px; }
+      .hero-text h1 { font-size: 2rem; }
+
+      
+    }
+  </style>
+</head>
+<body>
+<div id="top"></div>
+
+  <!-- ── Navigation ── -->
+  <nav style="position: sticky; top: 0; z-index: 10;">
+    <div class="inner">
+      <!-- EDIT: Replace with your name -->
+      <a href="#" class="nav-name">Erin Troland</a>
+      <button class="nav-hamburger" aria-label="Toggle menu" onclick="toggleMenu(this)">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+         <li><a href="#publications" onclick="closeMenu()">Publications</a></li>
+        <li><a href="#working-papers" onclick="closeMenu()">Research Notes</a></li>
+        <li><a href="#works-in-progress" onclick="closeMenu()">In Progress</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="site-wrapper">
+
+    <!-- ── Header / Bio ── -->
+    <header>
+      <div class="headshot-wrap">
+        <div class="headshot-placeholder">
+        
+            <img src="headshot.jpg" alt="Erin Troland">
+          
+
+          <!-- 
+          <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="30" cy="22" r="11" fill="#999"/>
+            <path d="M8 52c0-12.15 9.85-22 22-22s22 9.85 22 22" fill="#999"/>
+          </svg>
+          -->
+        </div>
+      </div>
+
+      <div class="hero-text">
+        <!-- EDIT: Your name and title -->
+        <h1>Erin Troland</h1>
+        <p class="title">Principal Economist <br> Federal Reserve Board of Governors</p>
+
+        <!-- EDIT: 2–4 sentence bio -->
+        <p class="bio">
+          I study inequality, focusing on local public finance and rental housing. 
+Recently, I have been working on property taxation, renter financial well-being, and intergenerational wealth. 
+        </p>
+
+         <p class="contact-line">
+          <span class="email-protect"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bbcdd4dc95d9c9ddfbdfd5dad7d4c9cf95de95d5d2c9de">vog.brf@dnalort.e.nire</a></span>
+          &nbsp;·&nbsp;
+          <a href="cv.pdf" target="_blank" rel="noopener">Curriculum Vitae</a>
+        </p>
+        <p class="disclaimer">
+  The views expressed here are my own and do not represent the views of the Federal Reserve Board.
+</p>
+      </div>
+    </header>
+
+    <!-- ── Publications ── -->
+    <section id="publications">
+      <div class="section-label">Publications</div>
+      <div class="papers">
+
+        <!-- PUB 2 -->
+        <div class="paper">
+          <a class="paper-title-link" href="#" target="_blank" rel="noopener">The Role of Property Assessment Oversight in School Finance Inequality</a>
+          <div class="paper-meta">with Alex Combs and John Foster</div>
+          <div class="paper-meta"><em>National Tax Journal</em> (forthcoming 2026)</div>
+          <div class="paper-links">
+            <a class="pill" href="https://www.federalreserve.gov/econres/feds/files/2023024pap.pdf" target="_blank" rel="noopener">Working Paper</a>
+            <button class="abstract-toggle" onclick="toggleAbstract(this, 'abs-pub2')">Abstract <span class="arrow">▾</span></button>
+            <button class="figure-toggle" onclick="toggleFigure(this, 'fig-pub2')">Key Figure <span class="arrow">▾</span></button>
+          </div>
+          <div class="paper-abstract-panel" id="abs-pub2">Inequality in school funding can stem from reliance on local property taxes. While reforms
+address property value and tax rate disparities, assessment accuracy remains underexamined. We
+study a property assessment intervention to show how assessments affect school finance
+inequality. Using difference-in-differences, we find that state oversight reduced underassessment
+and inequitable assessment variability. Assessed values rose by 42 percent and variability fell by
+26 percent. The intervention raised local revenue (particularly in districts unable to freely lower
+tax rates), reduced state aid that was subsidizing underassessment, and narrowed the revenue gap
+between rich and poor districts by 15 percent ($63 per pupil). Our findings show the importance
+of accurate assessments and state assessment oversight for school funding inequality.</div>
+          <figure class="paper-figure" id="fig-pub2">
+            <img src="ntj2026.jpg" alt="Key result figure Assessment Oversight">
+            <figcaption>Figure 2B: Propery reassessment intervention reduced variability in ratio of assessed value to sales price (coefficient of dispersion).</figcaption>
+          </figure>
+        </div>
+
+        <!-- PUB 1 -->
+        <div class="paper">
+          <a class="paper-title-link" target="_blank" rel="noopener" href="https://www.sciencedirect.com/science/article/abs/pii/S0304405X25001758">The Canary in the Coal Decline: Appalachian Household Finance and the Transition from Fossil Fuels</a>
+          <div class="paper-meta">with Joshua Blonz and Brigitte Roth Tran</div>
+          <div class="paper-meta"><em>Journal of Financial Economics</em> (2026)</div>
+          <div class="paper-links">
+            <a class="pill" href="https://doi.org/10.3386/w31072" target="_blank" rel="noopener">Working Paper</a>
+            <button class="abstract-toggle" onclick="toggleAbstract(this, 'abs-pub1')">Abstract <span class="arrow">▾</span></button>
+            <button class="figure-toggle" onclick="toggleFigure(this, 'fig-pub1')">Key Figure <span class="arrow">▾</span></button>
+          </div>
+          <div class="paper-abstract-panel" id="abs-pub1">We use individual-level credit data to study how recent declines in Appalachian coal mining affected household
+finances between 2011 and 2018. Using exogenous variation in electricity sector demand for coal, we find de-
+clines in coal demand decreased credit scores and increased financial distress within two years of coal shocks.
+These effects cannot be explained solely by job losses in coal mine worker households. Credit score declines and
+financial distress were largest among older individuals and people with lower-middle credit scores. Our results
+suggest the transition away from fossil fuels may impose meaningful costs on other fossil fuel extraction
+communities.</div>
+          <figure class="paper-figure" id="fig-pub1">
+            <img src="jfe2026.jpg" alt="Key result figure Canary">
+            <figcaption>Figure 6B: One year change in coal demand increases share of subprime borrowers for 3 years(credit score<660). </figcaption>
+          </figure>
+        </div>
+
+        <!-- PUB 3 -->
+        <div class="paper">
+          <a class="paper-title-link" target="_blank" rel="noopener" href="https://doi.org/10.1086/735564">Targeted Relief: Geography of Emergency Rental Assistance Funds</a>
+          <div class="paper-meta">with Theodore Figinski, Sydney Keenan, and Richard Sweeney</div>
+          <div class="paper-meta"><em>National Tax Journal</em> (2025)</div>
+          <div class="paper-links">
+            <a class="pill" href="https://doi.org/10.17016/FEDS.2024.055" target="_blank" rel="noopener">Working Paper</a>
+            <button class="abstract-toggle" onclick="toggleAbstract(this, 'abs-pub3')">Abstract <span class="arrow">▾</span></button>
+            <button class="figure-toggle" onclick="toggleFigure(this, 'fig-pub3')">Key Figure <span class="arrow">▾</span></button>
+          </div>
+          <div class="paper-abstract-panel" id="abs-pub3">In response to the COVID-19 pandemic, Congress established the Emergency Rental Assis-
+tance (ERA) program, which provided nearly $45 billion to prevent evictions and increase
+housing stability. Using administrative data on ERA transactions, we find that ERA sent more
+funds per renting household to census tracts with higher prepandemic eviction filing rates,
+higher rent-to-income ratios, higher poverty rates, higher shares of Black renting householders,
+higher shares of renting households with children, and higher shares of renting single moth-
+ers. Our results suggest that ERA was largely successful in reaching communities that were
+most likely to have the highest risk of eviction.</div>
+          <figure class="paper-figure" id="fig-pub3">
+            <img src="ntj2025.jpg" alt="Key result figure Targeted Relief">
+            <figcaption>Figure 1: ERA funds were targeted at census tracts with higher pre-pandemic eviction filings.</figcaption>
+          </figure>
+        </div>
+
+        <!-- PUB 4 -->
+        <div class="paper">
+          <a class="paper-title-link" target="_blank" rel="noopener" href="https://doi.org/10.1086/728094">Health Insurance and Hospital Supply: Evidence from 1950s Coal Country</a>
+          <div class="paper-meta">with Theodore Figinski</div>
+          <div class="paper-meta"><em>American Journal of Health Economics</em> (2025)</div>
+          <div class="paper-links">
+            <a class="pill" href="https://www.federalreserve.gov/econres/feds/health-insurance-and-hospital-supply-evidence-from-1950s-coal-country.htm" target="_blank" rel="noopener">Working Paper</a>
+            <button class="abstract-toggle" onclick="toggleAbstract(this, 'abs-pub4')">Abstract <span class="arrow">▾</span></button>
+            <button class="figure-toggle" onclick="toggleFigure(this, 'fig-pub4')">Key Figure <span class="arrow">▾</span></button>
+          </div>
+          <div class="paper-abstract-panel" id="abs-pub4">Large-scale health insurance expansions can improve individual outcomes and increase the
+availability of health-care services in underserved areas. We explore the effects of a large
+health-care program in 1950s Appalachia. The program insured hundreds of thousands
+of coal mining families and built new, high-quality hospitals in the area. We can separately
+identify the effect of health insurance from the combined effect of the insurance plus new
+hospitals. We use difference-in-differences to analyze effects on health-care access and
+health outcomes. The insurance alone increased hospital birth rates by 3 percent and re-
+duced infant mortality by 2 percent in the average county (over 25 percent of the gap be-
+tween Appalachia and the rest of the United States). The combination of the insurance and
+new hospitals increased hospital beds by 80 percent and crowd-out was limited, but results
+on infant mortality are inconclusive. Our results are consistent with the idea that a large
+insurance expansion can increase health access and improve health outcomes for certain
+types of basic care. However, a large insurance expansion alone may not be enough to spur
+investment in more advanced care that is less likely to be available in underserved areas.</div>
+          <figure class="paper-figure" id="fig-pub4">
+            <img src="ajhe2025.jpg" alt="Key result figure Health Insurance Hospital Supply">
+            <figcaption>Figure 3A: Health insurance intervention increases hospital birth rates by 3 percent for the average treated county</figcaption>
+          </figure>
+        </div>
+
+        <!-- PUB 5 -->
+        <div class="paper">
+          <a class="paper-title-link" target="_blank" rel="noopener" href="https://doi.org/10.1086/728094">Bringing Health Care to Appalachia: The Long-Run Impact of a Rural Health Care System</a>
+          <div class="paper-meta">with Theodore Figinski</div>
+          <div class="paper-meta"><em>Economic Development Quarterly</em> (2021)</div>
+          <div class="paper-links">
+            <button class="abstract-toggle" onclick="toggleAbstract(this, 'abs-pub5')">Abstract <span class="arrow">▾</span></button>
+            <button class="figure-toggle" onclick="toggleFigure(this, 'fig-pub5')">Key Figure <span class="arrow">▾</span></button>
+          </div>
+          <div class="paper-abstract-panel" id="abs-pub5">The U.S. government has supported rural hospitals through direct subsidies and staff recruitment programs. However, little is
+known about the long-run impact of large-scale changes to rural health care. The authors explore the long-run trajectory of
+Appalachian counties where a coal mining union introduced a pioneering rural health care program in the 1950s, anchored by
+a chain of high-quality hospitals. Hospital beds per capita in counties where the union built its hospitals are persistently high
+through 2006, even when compared to similar counties and accounting for a variety of supply- and demand-side factors. In
+particular, union counties defied a national hospital consolidation trend starting in the 1980s. Results are consistent with a
+supply-side explanation where the scale and/or innovation of the union’s investment allowed hospital markets to thrive
+and attract patients from a broad geography</div>
+          <figure class="paper-figure" id="fig-pub5">
+            <img src="edq2021.jpg" alt="Key result figure Long Run Rural Health Care System">
+            <figcaption>Figure 5: Persistent long term increase in hospital beds in counties with mining union hospitals</figcaption>
+          </figure>
+        </div>
+
+        <!-- PUB 8 -->
+        <div class="paper">
+          <a class="paper-title-link" target="_blank" rel="noopener" href="https://dl.acm.org/doi/abs/10.1145/3392561.3394645">Connecting Isolated Communities: Quantitative Evidence on the Adoption of Community Cellular Networks in the Philippines</a>
+          <div class="paper-meta">Niall Keleher, Mary Claire Barela, Joshua Blumenstock, Cedric Festin, Matthew Podolsky, Arman Rezaee, Erin Troland, Kurtis Heimerl</div>
+          <div class="paper-meta"><em>Proceedings of the Eleventh International Conference on Information and Communication Technologies and Development</em> (2020)</div>
+          <div class="paper-links">
+            <button class="abstract-toggle" onclick="toggleAbstract(this, 'abs-pub8')">Abstract <span class="arrow">▾</span></button>
+            <button class="figure-toggle" onclick="toggleFigure(this, 'fig-pub8')">Key Figure <span class="arrow">▾</span></button>
+          </div>
+          <div class="paper-abstract-panel" id="abs-pub8">What determines the success of community cellular networks? We leverage unique circumstances where all households in seven localities were interviewed before the launch of cellular networks. We observed substantial differences in network adoption across communities. Four communities displayed high and regular usage, while usage dissipated shortly after the network launch in three sites. Sixty-five percent of households made or received at least one call or text message. We find that a one standard deviation increase in household wealth is correlated with a three percentage point increase in network adoption and 43 additional cellular network transactions. Agricultural households were ten percentage points more likely to adopt the network than other households and female-headed households were five percentage points more likely to use the network at least once.</div>
+          <figure class="paper-figure" id="fig-pub8">
+            <img src="icdt2020.jpg" alt="Key result figure Connecting Isolated Communities">
+            <figcaption>Figure 8: Higher household wealth and education
+are positively correlated with increased celluar network activity. </figcaption>
+          </figure>
+        </div>
+
+        <!-- PUB 6 -->
+        <div class="paper">
+          <a class="paper-title-link" target="_blank" rel="noopener" href="https://www.aeaweb.org/doi/10.1257/pandp.20191094">Does Getting Health Insurance Affect Women's Fertility? Evidence from the United Mine Workers' Health Insurance System</a>
+          <div class="paper-meta">with Theodore Figinski</div>
+          <div class="paper-meta"><em>American Economic Review Papers and Proceedings</em> (2019)</div>
+          <div class="paper-links">
+            <button class="abstract-toggle" onclick="toggleAbstract(this, 'abs-pub6')">Abstract <span class="arrow">▾</span></button>
+            <button class="figure-toggle" onclick="toggleFigure(this, 'fig-pub6')">Key Figure <span class="arrow">▾</span></button>
+          </div>
+          <div class="paper-abstract-panel" id="abs-pub6">We examine how health insurance affects women's fertility decisions by analyzing the United Mine Workers of America (UMWA) hospital insurance expansion beginning in 1950. The program provided comprehensive, zero-cost coverage for pregnancy-related hospital expenses and children's care to union miners' families in Appalachia. Using county-level vital statistics data from 1946-1955 and a trend break specification, we find that insurance coverage significantly reduced fertility rates. Counties with average insurance coverage experienced approximately 1 percent annual declines in births relative to counties with no coverage, totaling a 5 percent decrease over five years. These results provide new evidence for the "quality-quantity" trade-off in fertility: when insurance improves infant survival rates, parents choose to have fewer children since more are likely to survive to adulthood. Unlike previous studies examining temporary or incremental insurance expansions, this large-scale, largely permanent coverage expansion for childbearing women and their children reveals substantial effects on fertility.</div>
+          <figure class="paper-figure" id="fig-pub6">
+            <img src="aeapp2019.jpg" alt="Key result figure Health Insurance and Fertility">
+            <figcaption>Figure 1: Health insurance intervention reversed trend of increasing fertility </figcaption>
+          </figure>
+        </div>
+
+        <!-- PUB 7 -->
+        <div class="paper">
+          <a class="paper-title-link" target="_blank" rel="noopener" href="https://www.aeaweb.org/articles?id=10.1257/aer.103.3.512">Modest, Secure, and Informed: Successful Development in Conflict Zones</a>
+          <div class="paper-meta">with Eli Berman, Joseph Felter, Jacob Shapiro</div>
+          <div class="paper-meta"><em>American Economic Review Papers and Proceedings</em> (2013)</div>
+          <div class="paper-links">
+        
+            <button class="figure-toggle" onclick="toggleFigure(this, 'fig-pub7')">Key Figure <span class="arrow">▾</span></button>
+          </div>
+        
+          <figure class="paper-figure" id="fig-pub7">
+            <img src="aeapp2013.jpg" alt="Key result figure MSI">
+            <figcaption>Figure 1: Community aid spending is more violence-reducing as battalions per district increase.</figcaption>
+          </figure>
+        </div>
+
+      </div><!-- end .papers -->
+      <a href="#top" class="back-to-top">↑ Back to top</a>
+    </section>
+
+
+    <!-- ── Research Notes ── -->
+    <section id="research-notes">
+      <div class="section-label">Research Notes</div>
+      <div class="papers">
+
+ <!-- PAPER 3 — copy this block to add more -->
+        <div class="paper">
+          <a class="paper-title-link" target="_blank" rel="noopener" href="https://doi.org/10.17016/2380-7172.3686">The Hidden Costs of Disability</a>
+          <div class="paper-meta">with Zofsha Merchant and Doug Webber</div><div class="paper-meta"><em>FEDS Notes</em> (2025)</div>
+          <div class="paper-links">
+           
+          </div>
+
+        </div>
+        <!-- END PAPER 3 -->
+
+        <!-- PAPER 1 — copy this block to add more -->
+        <div class="paper">
+          <a class="paper-title-link" target="_blank" rel="noopener" href="https://www.federalreserve.gov/econres/notes/feds-notes/did-the-pandemic-change-who-became-behind-on-rent-20230418.html">Did the Pandemic Change Who Became Behind on Rent? Characteristics of Renters Behind on Rent Before and After the Pandemic Onset</a>
+          <div class="paper-meta">with Zofsha Merchant</div><div class="paper-meta"><em>FEDS Notes</em> (2023)</div>
+          <div class="paper-links">
+           </div>
+
+        </div>
+        <!-- END PAPER 1 -->
+
+        <!-- PAPER 2 -->
+        <div class="paper">
+          <a class="paper-title-link" target="_blank" rel="noopener" href="https://doi.org/10.17016/2380-7172.2772">Improving Housing Payment Projections during the COVID-19 Pandemic</a>
+          <div class="paper-meta">with Jeff Larrimore</div><div class="paper-meta"><em>FEDS Notes</em> (2020)</div>
+          <div class="paper-links">
+           
+        </div>
+
+      </div>
+        <a href="#top" class="back-to-top">↑ Back to top</a>
+    </section>
+
+    <!-- ── Works in Progress ── -->
+    <section id="works-in-progress">
+      <div class="section-label">Works in Progress</div>
+      <div class="papers">
+
+        <!-- WIP 1 -->
+        <div class="paper">
+          <span class="paper-title">Assessor Discretion and Property Assessment Inequality Across Jurisdictions</span>
+          <div class="paper-meta">with Alex Combs and John Foster</div>
+        </div>
+
+        <!-- WIP 2 -->
+        <div class="paper">
+          <span class="paper-title">Measuring Renters in Credit Data: Evidence from Linked Survey and Administrative Data</span>
+        <div class="paper-meta">with Anna Tranfaglia</div>
+        </div>
+
+         <!-- WIP 3 -->
+        <div class="paper">
+          <span class="paper-title">Intergenerational Wealth and Insurance</span>
+        </div>
+
+      </div>
+        <a href="#top" class="back-to-top">↑ Back to top</a>
+    </section>
+
+     <!-- ── On Pause── -->
+    <section id="on-pause">
+      <div class="section-label">On Pause</div>
+      <div class="papers">
+
+        <!-- Pause 1 -->
+        <div class="paper">
+          <span class="paper-title">The Impact of Mobile Phones: Experimental Evidence from the Random Assignment of New Cell Towers</span>
+          
+          <div class="paper-meta">with Joshua Blumenstock, Niall Keleher, and Arman Rezaee</div><div class="paper-meta"><em>Funding from the Development Impact Lab and the Gates Foundation</em></div>
+        </div>
+
+      </div>
+        <a href="#top" class="back-to-top">↑ Back to top</a>
+    </section>
+
+  </div><!-- /site-wrapper -->
+
+  <footer>
+    <div class="site-wrapper">
+      &copy; 2026 Erin Troland 
+    </div>
+  </footer>
+
+  <script>
+    function toggleFigure(btn, figId) {
+      const fig = document.getElementById(figId);
+      const isOpen = fig.classList.contains('visible');
+      fig.classList.toggle('visible', !isOpen);
+      btn.classList.toggle('open', !isOpen);
+      btn.querySelector('.arrow').textContent = isOpen ? '▾' : '▴';
+    }
+
+    function toggleAbstract(btn, absId) {
+      const panel = document.getElementById(absId);
+      const isOpen = panel.classList.contains('visible');
+      panel.classList.toggle('visible', !isOpen);
+      btn.classList.toggle('open', !isOpen);
+      btn.querySelector('.arrow').textContent = isOpen ? '▾' : '▴';
+    }
+
+    function toggleMenu(btn) {
+      btn.classList.toggle('open');
+      document.querySelector('.nav-links').classList.toggle('open');
+    }
+
+    function closeMenu() {
+      document.querySelector('.nav-hamburger').classList.remove('open');
+      document.querySelector('.nav-links').classList.remove('open');
+    }
+  </script>
+
+</body>
+</html>
